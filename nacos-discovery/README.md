@@ -24,4 +24,5 @@ sh shutdown.sh
 shutdown.cmd
 ```
 
-[nacos 控制台](http://127.0.0.1:8848/nacos)
+### 登录信息
+[nacos](http://127.0.0.1:8848/nacos)

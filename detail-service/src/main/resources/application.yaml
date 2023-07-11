@@ -1,0 +1,29 @@
+server:
+  port: 21110
+spring:
+  application:
+    name: detail-service
+  # 注册服务
+  cloud:
+    nacos:
+      serverAddr: 127.0.0.1:8848
+  # 配置中心
+  config:
+    import:
+      - nacos:nacos-config-example.properties?refresh=true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+dubbo:
+  application:
+    name: ${spring.application.name}
+    qos-enable: false
+  provider:
+    token: false
+  registry:
+    address: nacos://${spring.cloud.nacos.serverAddr}
+  protocol:
+    name: dubbo
+    port: 21210
