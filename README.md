@@ -6,6 +6,7 @@
 [![SpringBoot](https://img.shields.io/badge/springboot-2.7.10-6cb52d.svg?style=flat-square)]()
 [![SpringCloud](https://img.shields.io/badge/springcloud-2021.0.4.0-6cb52d.svg?style=flat-square)]()
 [![Nacos](https://img.shields.io/badge/nacos-2.2.3-209bfa.svg?style=flat-square)](https://github.com/alibaba/nacos)
+[![LoadBalancer](https://img.shields.io/badge/loadbalancer-3.1.7-6cb52d.svg?style=flat-square)]()
 
 ### 架构设计
 
