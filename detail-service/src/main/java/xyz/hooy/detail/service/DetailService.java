@@ -1,12 +1,11 @@
 package xyz.hooy.detail.service;
 
 import lombok.RequiredArgsConstructor;
-import org.apache.dubbo.config.annotation.DubboReference;
 import org.springframework.stereotype.Service;
-import xyz.hooy.comment.api.dubbo.CommentDubbo;
 import xyz.hooy.detail.api.entity.Detail;
 import xyz.hooy.detail.entity.DetailWithComments;
 import xyz.hooy.detail.dao.DetailDao;
+import xyz.hooy.detail.remote.client.CommentRemoteClient;
 
 import java.util.List;
 
@@ -16,8 +15,7 @@ public class DetailService {
 
     private final DetailDao detailDao;
 
-    @DubboReference(check = false)
-    private CommentDubbo commentDubbo;
+    private final CommentRemoteClient commentRemoteClient;
 
     public Detail getDetailById(Long id) {
         long i = id;
@@ -37,13 +35,13 @@ public class DetailService {
 
     public DetailWithComments<String> getDetailWithCommentNamesById(Long id) {
         Detail detail = getDetailById(id);
-        List<String> commentsName = commentDubbo.getCommentNamesByDetailId(id);
+        List<String> commentsName = commentRemoteClient.getCommentNamesByDetailId(detail.getId());
         return new DetailWithComments<>(detail, commentsName);
     }
 
     public DetailWithComments<String> getDetailWithCommentContentsById(Long id) {
         Detail detail = getDetailById(id);
-        List<String> commentsContent = commentDubbo.getCommentContentsByDetailId(id);
+        List<String> commentsContent = commentRemoteClient.getCommentContentsByDetailId(detail.getId());
         return new DetailWithComments<>(detail, commentsContent);
     }
 
