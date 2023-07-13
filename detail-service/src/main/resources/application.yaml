@@ -7,6 +7,10 @@ spring:
   cloud:
     nacos:
       server-addr: 127.0.0.1:8848
+    sentinel:
+      transport:
+        # 添加sentinel的控制台地址
+        dashboard: 127.0.0.1:8880
   # 配置中心
   config:
     import:
