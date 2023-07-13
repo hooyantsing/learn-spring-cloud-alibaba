@@ -7,10 +7,13 @@
 [![SpringCloud](https://img.shields.io/badge/springcloud-2021.0.4.0-6cb52d.svg?style=flat-square)]()
 [![Nacos](https://img.shields.io/badge/nacos-2.2.3-209bfa.svg?style=flat-square)](https://github.com/alibaba/nacos)
 [![LoadBalancer](https://img.shields.io/badge/loadbalancer-3.1.7-6cb52d.svg?style=flat-square)]()
+[![Sentinel](https://img.shields.io/badge/sentinel-1.8.5-3279b7.svg?style=flat-square)]()
+[![SentinelDashboard](https://img.shields.io/badge/sentineldashboard-1.8.6-3279b7.svg?style=flat-square)]()
 
 ### 架构设计
 
 * [nacos](http://127.0.0.1:8848/nacos)
+* [sentinel-dashboard](http://localhost:8880)
 
 ### 许可协议
 
