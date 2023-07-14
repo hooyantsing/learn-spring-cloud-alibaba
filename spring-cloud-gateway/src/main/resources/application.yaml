@@ -1,0 +1,13 @@
+server:
+  port: 18080
+spring:
+  application:
+    name: spring-cloud-gateway
+  cloud:
+    nacos: # 注册服务
+      server-addr: 127.0.0.1:8848
+    gateway:
+      discovery:
+        locator:  # 动态路由
+          enabled: true # 开启基于服务发现的路由规则
+          lower-case-service-id: true # 是否将服务名转小写
