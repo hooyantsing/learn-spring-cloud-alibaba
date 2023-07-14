@@ -10,7 +10,7 @@ import org.springframework.web.client.RestTemplate;
 public class RestTemplateConfig {
 
     @LoadBalanced
-    @SentinelRestTemplate
+    @SentinelRestTemplate(fallback = "fallbackException", fallbackClass = CommentRemoteFallback.class)
     @Bean("commentRemote")
     public RestTemplate commentRemote() {
         return new RestTemplate();

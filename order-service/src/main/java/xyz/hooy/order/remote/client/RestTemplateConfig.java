@@ -10,9 +10,9 @@ import org.springframework.web.client.RestTemplate;
 public class RestTemplateConfig {
 
     @LoadBalanced
-    @SentinelRestTemplate
+    @SentinelRestTemplate(blockHandler = "blockException", blockHandlerClass = DetailRemoteBlockHandler.class)
     @Bean("detailRemote")
-    public RestTemplate detailRemote(){
+    public RestTemplate detailRemote() {
         return new RestTemplate();
     }
 }
